@@ -1017,13 +1017,11 @@ var input = """2
 -866
 """
 
-var inputArr = input.split("\n").filter { !it.isNullOrBlank() }.map { it.toInt() }.toIntArray()
+var inputArr = input.split("\n").filter { !it.isBlank() }.map { it.toInt() }.toIntArray()
 var i = 0
 var count = 0
-do {
-    val move = inputArr[i]
-    inputArr[i]++
-    i += move
+while (i in 0 until inputArr.size) {
+    i += inputArr[i]++
     count++
-} while (i > 0 && i < inputArr.size)
+}
 print(count)
