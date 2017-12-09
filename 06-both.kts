@@ -1,10 +1,10 @@
 import java.util.*
 
 val input = "14	0	15	12	11	11	3	5	1	6	8	4	9	1	8	4"
-val inputArr = input.split("\t", " ").filter { !it.isNullOrBlank() }.map { it.toInt() }.toIntArray()
+val inputArr = input.split("\t", " ").filter { !it.isBlank() }.map { it.toInt() }.toIntArray()
 val history = LinkedList<IntArray>()
 
-while (history.find { it.contentEquals(inputArr) }?.isEmpty() != false) {
+while (history.none { it.contentEquals(inputArr) }) {
     history.add(inputArr.copyOf())
 
     var max = inputArr.indexOfFirst { it == inputArr.max() }
