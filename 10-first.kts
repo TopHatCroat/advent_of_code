@@ -7,8 +7,6 @@ var pos = 0
 var skip = 0
 
 input.split(",").map { it.toInt() }.forEach {
-    println(Arrays.toString(numbers))
-
     numbers.reverseSubstring(pos, it-1)
     pos += it + skip
     skip++
