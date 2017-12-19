@@ -16,6 +16,6 @@ fun MutableList<Int>.circularInsert(step: Int, value: Int) {
 println(list)
 
 list.forEachIndexed { i, v ->
-    if (v == 2017)
+    if (v == 2_017)
         println(list[i + 1])
 }
